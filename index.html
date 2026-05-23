@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>竞猜游戏</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="lottery-box">
+  <div class="main-title" id="pageTitle">账号登录</div>
+  <div id="loginBox">
+    <input type="text" id="acc" placeholder="请输入登录账号">
+    <input type="password" id="pwd" placeholder="请输入登录密码">
+    <button class="btn btn-red" onclick="login()">立即登录</button>
+    <div class="tip-text" id="tipText"></div>
+    <button class="btn btn-gray" onclick="switchPage()">暂无账号 前往注册</button>
+  </div>
+
+  <div id="regBox" style="display:none">
+    <input type="text" id="nick" placeholder="设置个人昵称">
+    <input type="text" id="regAcc" placeholder="自定义登录账号">
+    <input type="password" id="regPwd" placeholder="设置登录密码">
+    <button class="btn btn-red" onclick="register()">提交注册</button>
+    <div class="tip-text" id="regTip"></div>
+    <button class="btn btn-gray" onclick="switchPage()">已有账号 返回登录</button>
+  </div>
+</div>
+<script type="module" src="js/login.js"></script>
+</body>
+</html>

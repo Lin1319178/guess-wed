@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>作弊日志查询</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="lottery-box">
+  <div class="main-title">违规作弊日志记录</div>
+  <div style="text-align:center;color:#94a3b8;margin-bottom:20px">记录所有违规作弊账号</div>
+
+  <button class="btn btn-blue" onclick="refreshCheatLog()">刷新作弊列表</button>
+  <button class="btn btn-gray" onclick="clearCheatLog()">清空日志记录</button>
+
+  <div class="sub-title">作弊账号明细</div>
+  <table>
+    <thead>
+      <tr>
+        <th>作弊账号</th>
+        <th>玩家昵称</th>
+        <th>作弊类型</th>
+        <th>作弊时间</th>
+      </tr>
+    </thead>
+    <tbody id="cheatTable"></tbody>
+  </table>
+
+  <div class="tip-text" id="logTip"></div>
+  <div style="margin-top:20px">
+    <button class="btn btn-red" onclick="location.href='admin.html'">返回管理后台</button>
+  </div>
+</div>
+
+<script type="module">
+import * as DB from "./js/db.js";
+
+window.refreshCheatLog = function(){
+  let logList = DB.getCheatLog();
+  let html = "";
+  if(logList.length === 0){
+    html = "<tr><td colspan='4'>暂无作弊记录</td></tr>";
+  }else{
+    logList.forEach(item=>{
+      html += `
+      <tr>
+        <td>${item.account}</td>
+        <td>${item.nickname}</td>
+        <td>${item.cheatType}</td>
+        <td>${item.cheatTime}</td>
+      </tr>
+      `
+    })
+  }
+  document.getElementById("cheatTable").innerHTML = html;
+  document.getElementById("logTip").innerText = "日志刷新完成";
+}
+
+window.clearCheatLog = function(){
+  if(!confirm("确定清空全部作弊日志？无法恢复"))return;
+  DB.saveCheatLog([]);
+  refreshCheatLog();
+  document.getElementById("logTip").innerText="日志已清空";
+}
+
+window.onload = refreshCheatLog;
+</script>
+</body>
+</html>
