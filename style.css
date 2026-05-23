@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", sans-serif;
+}
+
+html, body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f8fafc;
+  font-size: 16px;
+}
+
+.lottery-box {
+  width: 95%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1e3a5f, #0f2744);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.15);
+}
+
+.main-title {
+  font-size: clamp(22px,5vw,28px);
+  text-align: center;
+  color: #fb7185;
+  font-weight: bold;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(251, 113, 133, 0.4);
+}
+
+.sub-title {
+  font-size: clamp(16px,3vw,20px);
+  color: #fbbf24;
+  margin: 18px 0 10px;
+  border-left: 5px solid #ec4899;
+  padding-left: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 10px 0;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 10px;
+  font-size: clamp(14px,2.5vw,16px);
+  background: rgba(15, 23, 42, 0.7);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+input:focus {
+  border-color: #fb7185;
+  box-shadow: 0 0 8px rgba(251, 113, 133, 0.3);
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: clamp(15px,2.5vw,17px);
+  margin: 8px 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.btn:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+.btn-red {
+  background: linear-gradient(90deg, #e11d48, #fb7185);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+}
+.btn-blue {
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+.btn-green {
+  background: linear-gradient(90deg, #059669, #34d399);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+.btn-gray {
+  background: linear-gradient(90deg, #475569, #64748b);
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.2);
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.num-ball-wrap {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px,4vw,24px);
+  margin: 30px 0;
+}
+.num-ball {
+  width: clamp(60px,12vw,80px);
+  height: clamp(60px,12vw,80px);
+  line-height: clamp(60px,12vw,80px);
+  background: radial-gradient(circle, #f87171, #dc2626);
+  color: #fff;
+  font-size: clamp(24px,5vw,32px);
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
+.bet-card {
+  width: 22%;
+  min-width: 70px;
+  text-align: center;
+  background: rgba(30, 41, 59, 0.8);
+  padding: 12px 6px;
+  border-radius: 10px;
+  margin: 8px 0;
+  border: 1px solid rgba(251, 191, 36, 0.25);
+}
+.bet-name {
+  font-size: clamp(14px,2.5vw,16px);
+  color: #fcd34d;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+.rate-text {
+  font-size: clamp(12px,2vw,14px);
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.tip-text {
+  text-align: center;
+  color: #f87171;
+  margin: 15px 0;
+  font-size: clamp(14px,2.5vw,16px);
+}
+
+.user-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 12px;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 10px;
+  margin-bottom: 18px;
+  gap: 8px;
+}
+.score-num {
+  color: #facc15;
+  font-weight: bold;
+  font-size: clamp(15px,2.5vw,18px);
+}
+.time-count {
+  color: #22d3ee;
+  font-weight: bold;
+  font-size: clamp(15px,2.5vw,18px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: rgba(15, 23, 42, 0.5);
+}
+th, td {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: clamp(8px,2vw,12px);
+  text-align: center;
+  font-size: clamp(13px,2vw,15px);
+  color: #cbd5e1;
+}
+th {
+  color: #fbbf24;
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.calc-info {
+  text-align: center;
+  font-size: clamp(16px,3vw,20px);
+  color: #22d3ee;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
